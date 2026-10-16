@@ -21,7 +21,7 @@ export const explainCode = createServerFn({ method: "POST" })
     }),
   )
   .handler(async ({ data }) => {
-    const key = process.env.LOVABLE_API_KEY;
+    const key = process.env['LOVABLE_API_KEY'];
     if (!key) throw new Error("AI is not configured.");
 
     const system = `You are a patient senior software engineer acting as a code tutor. ${LEVEL_PROMPTS[data.level]}
